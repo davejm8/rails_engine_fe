@@ -9,5 +9,11 @@ RSpec.describe MerchantService do
 
   it 'returns a list of merchants' do
     merchants = MerchantService.get_merchants
+
+    expect(merchants).to be_a(Hash)
+    expect(merchants[:data]).to be_an(Array)
+    expect(merchants[:data].count).to eq(100)
+    expect(merchants[:data][0][:id]).to eq("1")
+    expect(merchants[:data][0][:attributes][:name]).to eq("Schroeder-Jerde")
   end
 end
