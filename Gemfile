@@ -57,7 +57,8 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'faraday'
-  gem 'webmock'
+  gem 'launchy'
+  # gem 'webmock'
 end
 
 group :development do

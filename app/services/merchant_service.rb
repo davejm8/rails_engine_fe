@@ -3,6 +3,10 @@ class MerchantService
     JSON.parse(conn.get("merchants").body, symbolize_names: true)
   end
 
+  def self.get_merchant_items(id)
+    JSON.parse(conn.get("merchants/#{id}/items").body, symbolize_names: true)
+  end
+
   private
 
   def self.conn

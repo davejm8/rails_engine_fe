@@ -2,11 +2,6 @@ require 'rails_helper'
 require './app/facades/merchant_facade'
 
 RSpec.describe MerchantFacade do
-  before :each do
-    merchants_response = File.read('spec/fixtures/merchants.json')
-    stub_request(:get, "http://localhost:3000/api/v1/merchants")
-      .to_return(status: 200, body: merchants_response)
-  end
 
   it 'exists' do
     merchant_facade = MerchantFacade.new
